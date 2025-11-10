@@ -34,15 +34,17 @@ public class tictacToe {
                         System.out.println("its a tie!");
                         done = true;
                     } else {
-                        currentPlayer.equals("X") ? "O" : "X";
+                        currentPlayer = currentPlayer.equals("X") ? "O" : "X";
                     }
                 } else {
                     System.out.println("invalid move. That space is already taken.");
                 }
             }
-        }
 
+            playAgain = SafeInput.getYNconfirm(in, "Would you like to play again? (y/n");
+        } while (playAgain);
     }
+
 
     private static void clearBoard() {
         for (int row = 0; row < ROWS; row++) {
